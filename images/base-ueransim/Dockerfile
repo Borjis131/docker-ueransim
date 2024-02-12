@@ -14,6 +14,6 @@ ARG DEBIAN_FRONTEND="noninteractive"
 # install dependencies
 RUN apt-get update && apt-get install make gcc g++ libsctp-dev lksctp-tools iproute2 cmake git -y
 
-# clone the specific open5gs version and install it
+# clone the specific UERANSIM version and install it
 RUN git clone --depth 1 --branch=${UERANSIM_VERSION} https://github.com/aligungr/UERANSIM.git \
 	&& cd UERANSIM && make -j `nproc`

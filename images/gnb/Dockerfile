@@ -11,9 +11,6 @@ FROM ubuntu:${UBUNTU_VERSION}
 # build-time arguments
 ARG DEBIAN_FRONTEND="noninteractive"
 
-# environment variables
-ENV UERANSIM_COMPONENT="gnb"
-
 # install dependencies
 RUN apt-get update && apt-get install libsctp-dev lksctp-tools iproute2 -y
 

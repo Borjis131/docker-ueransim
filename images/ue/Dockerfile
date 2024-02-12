@@ -11,9 +11,6 @@ FROM ubuntu:${UBUNTU_VERSION}
 # build-time arguments
 ARG DEBIAN_FRONTEND="noninteractive"
 
-# environment variables
-ENV UERANSIM_COMPONENT="ue"
-
 # install dependencies
 RUN apt-get update && apt-get install iproute2 iputils-ping -y
 
