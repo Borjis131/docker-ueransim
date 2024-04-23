@@ -12,7 +12,7 @@ group "default" {
 
 target "base-ueransim" {
   context = "./images/base-ueransim"
-  tags = ["base-open5gs:${UERANSIM_VERSION}"]
+  tags = ["base-ueransim:${UERANSIM_VERSION}"]
   output = ["type=image"]
 }
 
