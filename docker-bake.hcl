@@ -1,5 +1,5 @@
 variable "UERANSIM_VERSION" {
-  default = "v3.2.6"
+  default = "v3.2.7"
 }
 
 variable "UBUNTU_VERSION" {
@@ -11,12 +11,20 @@ group "default" {
 }
 
 target "base-ueransim" {
+  args = {
+    UBUNTU_VERSION = "${UBUNTU_VERSION}"
+    UERANSIM_VERSION = "${UERANSIM_VERSION}"
+  }
   context = "./images/base-ueransim"
   tags = ["base-ueransim:${UERANSIM_VERSION}"]
   output = ["type=image"]
 }
 
 target "gnb" {
+  args = {
+    UBUNTU_VERSION = "${UBUNTU_VERSION}"
+    UERANSIM_VERSION = "${UERANSIM_VERSION}"
+  }
   context = "./images/gnb"
   contexts = {
     "base-ueransim:${UERANSIM_VERSION}" = "target:base-ueransim"
@@ -26,6 +34,10 @@ target "gnb" {
 }
 
 target "ue" {
+  args = {
+    UBUNTU_VERSION = "${UBUNTU_VERSION}"
+    UERANSIM_VERSION = "${UERANSIM_VERSION}"
+  }
   context = "./images/ue"
   contexts = {
     "base-ueransim:${UERANSIM_VERSION}" = "target:base-ueransim"

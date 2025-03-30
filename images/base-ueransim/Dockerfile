@@ -8,7 +8,7 @@ ARG UBUNTU_VERSION="jammy"
 FROM ubuntu:${UBUNTU_VERSION} AS builder
 
 # build-time arguments for builder
-ARG UERANSIM_VERSION="v3.2.6"
+ARG UERANSIM_VERSION="v3.2.7"
 ARG DEBIAN_FRONTEND="noninteractive"
 
 # install dependencies
